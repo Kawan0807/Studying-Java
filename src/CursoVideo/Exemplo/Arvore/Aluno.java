@@ -9,8 +9,8 @@ public class Aluno extends Pessoa{
         this.matricula = matricula;
         this.curso = curso;
     }
-    public void pagarMensal(){
-
+    public void pagarMensalidade(){
+        System.out.println("Pagando mensalidade do aluno " + this.nome);
     }
 
     public int getMatricula() {

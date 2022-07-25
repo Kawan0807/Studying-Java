@@ -1,9 +1,9 @@
 package CursoVideo.Exemplo.Arvore;
 
 public abstract class Pessoa {
-    private String nome;
-    private int idade;
-    private String sexo;
+    protected String nome;
+    protected int idade;
+    protected String sexo;
 
     public Pessoa(String nome, int idade, String sexo) {
         this.nome = nome;

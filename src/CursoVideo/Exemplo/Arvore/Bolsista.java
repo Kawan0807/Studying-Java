@@ -9,10 +9,11 @@ public class Bolsista extends Aluno{
     }
 
     public void renovarBolsa(){
-
+        System.out.println("Renovando bolsa de " + this.nome);
     }
-    public void pafarMensalidade(){
-
+    @Override
+    public void pagarMensalidade(){
+        System.out.println(this.nome + " é bolsista! Pagamento facilitado com bolsa " + this.getBolsa() + "...");
     }
 
     public String getBolsa() {
