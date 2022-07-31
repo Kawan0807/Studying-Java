@@ -1,32 +1,29 @@
-import org.junit.Assert;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+package br.com.alura.leilao.Login;
+
+import br.com.alura.leilao.Leliloes.LeiloesPage;
+import br.com.alura.leilao.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LoginPage {
+public class LoginPage extends PageObject {
     private static final String URL_Login = "http://localhost:8080/login";
-    private WebDriver browser;
 
     public LoginPage() {
-        System.setProperty("webdriver.chrome.driver","src/chromedriver.exe");
-        this.browser = new ChromeDriver();
-        browser.navigate().to(URL_Login);
+        super(null);
+        this.browser.navigate().to(URL_Login);
     }
 
-    public void fechar() {
-        this.browser.quit();
-    }
 
     public void preencheFormularioDeLogin(String userName, String userpassword) {
         browser.findElement(By.id("username")).sendKeys( userName);
         browser.findElement(By.id("password")).sendKeys(userpassword);
     }
 
-    public void efetuaLogin() {
+    public LeiloesPage efetuaLogin() {
         browser.findElement(By.xpath("//*[@id=\"login-form\"]/button")).click();
+        return new LeiloesPage(browser);
     }
 
     public boolean isPaginaDeLogin() {
@@ -52,4 +49,6 @@ public class LoginPage {
     public boolean isPaginaDeLoginComDadosInvalidos(){
         return browser.getCurrentUrl().equals(URL_Login+ "?error");
     }
+
+
 }
