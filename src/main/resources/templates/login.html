@@ -9,9 +9,9 @@
     <div th:replace="~{base :: titulo('Login')}"></div>
 
     <div class="card mt-0">
-        <div th:if="${param.error}">
+        <div class="alert alert-danger" role="alert" th:if="${param.error}">
             Invalid username and password.</div>
-        <div th:if="${param.logout}">
+        <div class="alert alert-success" role="alert" th:if="${param.logout}">
             You have been logged out.</div>
         <form th:action="@{/login}" class="card-body" method="post">
             <div class="form-group">
