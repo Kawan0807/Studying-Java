@@ -11,7 +11,7 @@
     <div class="card mt-3">
 
 
-        <form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST">
+        <form th:action= "@{/pedido/novo}" th:object="${requisicaoNovoPedido}" class="card-body"  method="POST">
 
             <div class="mb-3">
                 <label for="nomeProduto">Produto</label>

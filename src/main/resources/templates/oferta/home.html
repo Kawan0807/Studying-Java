@@ -1,10 +1,10 @@
 <html>
 <head th:replace="~{base :: head}"></head>
-<body id="fundo">
+<body id="fundo" onload="onLoad()">
 
 <div  th:replace="~{base :: logo}"></div>
 
-<div class="container" id="fundo">
+<div class="container" id="fundo" id="ofertas">
 
     <div class="jumbotron mb-0">
         <h1 class="display-4">Ultimos Pedidos</h1>
@@ -43,5 +43,27 @@
         </div>
     </div>
 </div>
+<script>
+    function onLoad(){
+        var app = new Vue({
+            el : '#ofertas',
+            data : {
+                pedidos : [
+                    {   "id" :16,
+                        "nomeProduto":"PlayStation 5",
+                        "valorNegociado":4000.00,
+                        "dataDaEntrega":"2022-09-08",
+                        "urlProduto":"https://www.americanas.com.br/produto/5315680611",
+                        "urlImagem":"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTA0VKR0M6-jcjWewxw7U2anPcjwE_WGs-KWEYEOfM-6OWvuj_B81m3y8l6blxJ3dLSkRcThFsBAI7DTT31P8Ij8gJPoKT2-w",
+                        "descricao":"Videogame",
+                        "status":"AGUARDANDO"
+                    }
+
+                ]
+            }
+        })
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 </html>

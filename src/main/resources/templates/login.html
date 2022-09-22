@@ -10,9 +10,10 @@
 
     <div class="card mt-0">
         <div class="alert alert-danger" role="alert" th:if="${param.error}">
-            Invalid username and password.</div>
+            Usuario e Senha inválidos! </div>
         <div class="alert alert-success" role="alert" th:if="${param.logout}">
-            You have been logged out.</div>
+            Logout realizado com sucesso!</div>
+
         <form th:action="@{/login}" class="card-body" method="post">
             <div class="form-group">
                 <label for="username">Usuário</label>
